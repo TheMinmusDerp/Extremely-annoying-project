@@ -14,17 +14,15 @@ function setup() {
 function draw() {
   background(255,255,255);  
   if(isTouching(car,wall)) {
-    var deformation = (0.5 * weight * speed)/22500
+    var deformation = (0.5 * weight * speed * speed)/22500
     if(deformation<100) {
       car.shapeColor = "green";
-      car.velocityX = 0;
     } else if(deformation<180) {
       car.shapeColor = "yellow";
-      car.velocityX = 0;
     } else {
       car.shapeColor = "red";
-      car.velocityX = 0;
     }
+    car.velocityX = 0;
   }
   drawSprites();
 }
